@@ -1,0 +1,26 @@
+{
+  "name": "Fap2vn",
+  "version": "1.0",
+  "description": "Link detection with spaced and special characters.",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "pages/popup.html"
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": ["scripts/context.js"]
+  },
+  "permissions": ["notifications", "contextMenus", "tabs", "<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/main.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
